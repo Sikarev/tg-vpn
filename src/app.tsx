@@ -1,4 +1,3 @@
-import './app.css'
 import { HostRouter } from './host-router.tsx';
 
 function App() {
