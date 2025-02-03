@@ -19,7 +19,7 @@ export const InfoPage: FC = () => {
           </UiCard>
         </div>
 
-        <UiButton className="!mt-6" color="primary">Попробовать бесплатно 3 дня</UiButton>
+        <UiButton className="w-full !mt-6 !py-4" color="primary">Попробовать бесплатно 3 дня</UiButton>
 
         <div className="my-2 text-xs flex justify-center">После 99 ₽/мес за устройство. <span className="text-[#5A60FF]">Полные условия</span></div>
       </div>
