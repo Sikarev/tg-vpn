@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { UiButton, UiCard, UiCopyLink } from '../../../shared/ui';
 import PhoneImg from '../../../assets/phone.png';
 
+// TODO: add page for each platform
 export const PlatformContent: FC = () => {
   return (
     <div className="flex flex-col gap-2">
@@ -23,7 +24,7 @@ export const PlatformContent: FC = () => {
             Нажмите “+” сверху в приложении FoxRay и вставьте ссылку ниже для добавления сервера
           </div>
 
-          <UiCopyLink />
+          <UiCopyLink link="hdbwvdawghdawcvawcdvawcvdcawcvawvcjhawvcxhawbdnabwcvaevec" />
         </div>
       </UiCard>
 
