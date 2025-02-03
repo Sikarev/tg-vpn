@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { UiButton, UiCard } from '../../../shared/ui';
+import { UiButton, UiCard, UiCopyLink } from '../../../shared/ui';
+import PhoneImg from '../../../assets/phone.png';
 
 export const PlatformContent: FC = () => {
   return (
@@ -11,21 +12,31 @@ export const PlatformContent: FC = () => {
         </div>
       </UiCard>
 
-      <UiCard title="Вставьте параметры подключения">
+      <UiCard
+        imageProps={{
+          src: PhoneImg
+        }}
+        title="Вставьте параметры подключения"
+      >
         <div className="flex flex-col gap-4">
           <div>
             Нажмите “+” сверху в приложении FoxRay и вставьте ссылку ниже для добавления сервера
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div
-              className="rounded-[24px] p-4 -mx-4 text-white bg-[#7878802E] overflow-hidden break-all">hdbwvdawghdawcvawcdvawcvdcawcvawvcjhawvcxhawbdnabwcvaevec
-            </div>
-
-            <UiButton className="w-[calc(100%+2rem)] !-mx-4 !mt-2 !-mb-6 !py-4">Скопировать ссылку</UiButton>
-          </div>
+          <UiCopyLink />
         </div>
       </UiCard>
+
+      <UiCard
+        imageProps={{
+          src: PhoneImg
+        }}
+        title="Нажмите “Tap to connect”"
+      >
+        На главной странице приложения. Поздравляем, вы подключены!
+      </UiCard>
+
+      <div className="flex justify-center gap-2 my-6">Не получается? <span className="text-[#5A60FF]">Написать в поддержку</span></div>
     </div>
   )
 };

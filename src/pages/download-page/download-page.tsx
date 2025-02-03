@@ -15,6 +15,7 @@ export const DownloadPage: FC = () => {
         setSelectedPlatform={setSelectedPlatform}
       />
 
+      {/*TODO: add scroll on content*/}
       <PlatformContent />
     </div>
   );
