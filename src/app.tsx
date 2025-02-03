@@ -1,9 +1,9 @@
-import { HostRouter } from './host-router.tsx';
+import { HostContainer } from './host-container.tsx';
 
 function App() {
 
   return (
-    <HostRouter />
+    <HostContainer />
   );
 }
 

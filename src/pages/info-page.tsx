@@ -3,7 +3,7 @@ import { UiButton, UiCard } from '../shared/ui';
 
 export const InfoPage: FC = () => {
   return (
-    <div className="flex flex-col items-center justify-between h-full mx-2">
+    <div className="flex flex-col items-center justify-between h-full">
       <div className="font-bold text-3xl my-20">Best VPN</div>
 
       <div>
