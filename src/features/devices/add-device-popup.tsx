@@ -1,34 +1,34 @@
-import { FC, Fragment, useState } from 'react';
-import { LeftOutlined, PlusOutlined } from '@ant-design/icons';
-import { UiButton, UiCard } from '../../shared/ui';
+import { FC, Fragment, ReactNode, useState } from 'react';
+import { LeftOutlined } from '@ant-design/icons';
+import { UiButton } from '../../shared/ui';
 import { Input } from 'antd-mobile';
 import { UiPopup } from '../../shared/ui/ui-popup.tsx';
 
-export const AddDeviceBtn: FC = () => {
+export interface AddDevicePopupProps {
+  renderOpener: (open: () => void) => ReactNode;
+}
+
+export const AddDevicePopup: FC<AddDevicePopupProps> = (props) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const openModal = () => {
+  const openPopup = () => {
     setIsVisible(true);
   }
-  const closeModal = () => {
+  const closePopup = () => {
     setIsVisible(false);
   }
 
   return (
     <Fragment>
-      <UiCard onClick={openModal} size="small" className="justify-center">
-        <div className="flex items-center text-white">
-          <PlusOutlined className="text-[24px]" />
-        </div>
-      </UiCard>
+      {props.renderOpener(openPopup)}
       <UiPopup
         fullPage
-        onClose={closeModal}
+        onClose={closePopup}
         visible={isVisible}
       >
         <div className="h-full flex flex-col justify-between">
           <div className="flex flex-col items-center">
-            <LeftOutlined className="self-start mx-4 mb-2 text-base" onClick={closeModal}/>
+            <LeftOutlined className="self-start mx-4 mb-2 text-base" onClick={closePopup}/>
             <div className="font-bold text-xl mb-3">Добавление устройства</div>
             <div className="text-[#EBEBF560]">Придумайте имя</div>
           </div>
@@ -39,7 +39,7 @@ export const AddDeviceBtn: FC = () => {
           />
 
           <UiButton
-            onClick={closeModal}
+            onClick={closePopup}
             className="!w-full !h-[56px]"
             color="primary"
           >

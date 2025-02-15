@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { RightOutlined } from '@ant-design/icons';
+import { PlusOutlined, RightOutlined } from '@ant-design/icons';
 import { WalletCard } from '../../features/wallet';
-import { AddDeviceBtn, DeviceCard } from '../../features/devices';
+import { AddDevicePopup, DeviceCard } from '../../features/devices';
 import { UiCard } from '../../shared/ui';
 import { PasswordIcon, PeopleIcon } from '../../icons';
 
@@ -14,7 +14,15 @@ export const HomePage: FC = () => {
         <WalletCard/>
 
         <div className="flex gap-2 mt-2">
-          <AddDeviceBtn/>
+          <AddDevicePopup
+            renderOpener={(open) => (
+              <UiCard onClick={open} size="small" className="justify-center">
+                <div className="flex items-center text-white">
+                  <PlusOutlined className="text-[24px]" />
+                </div>
+              </UiCard>
+            )}
+          />
           <DeviceCard/>
         </div>
       </div>
