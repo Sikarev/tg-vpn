@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { PlusOutlined, RightOutlined } from '@ant-design/icons';
 import { WalletCard } from '../../features/wallet';
 import { AddDevicePopup, DeviceCard } from '../../features/devices';
-import { UiCard } from '../../shared/ui';
+import { UiCard, UiFloatingPanel } from '../../shared/ui';
 import { PasswordIcon, PeopleIcon } from '../../icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,16 @@ export const HomePage: FC = () => {
             </div>
           </div>
         </UiCard>
-        <div className="flex justify-center gap-2 my-6">Остались вопросы? <span className="text-[#5A60FF]">Ответы</span></div>
+        <div className="flex justify-center gap-2 my-6">
+          Остались вопросы?{' '}
+          <UiFloatingPanel
+            renderOpener={(open) => (
+              <span onClick={open} className="text-[#5A60FF]">Ответы</span>
+            )}
+          >
+            <div>Ответы на вопросы</div>
+          </UiFloatingPanel>
+        </div>
       </div>
     </div>
   );

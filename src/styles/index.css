@@ -66,3 +66,15 @@ body {
 .adm-popup-body {
   backdrop-filter: blur(50px);
 }
+
+.adm-floating-panel {
+  background-color: #2525258C;
+  backdrop-filter: blur(30px);
+  --border-radius: 32px !important;
+  border-top-left-radius: 32px !important;
+  border-top-right-radius: 32px !important;
+
+  .adm-floating-panel-header {
+    --border-radius: 32px !important;
+  }
+}
