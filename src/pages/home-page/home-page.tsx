@@ -4,8 +4,11 @@ import { WalletCard } from '../../features/wallet';
 import { AddDevicePopup, DeviceCard } from '../../features/devices';
 import { UiCard } from '../../shared/ui';
 import { PasswordIcon, PeopleIcon } from '../../icons';
+import { useNavigate } from 'react-router-dom';
 
 export const HomePage: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-full flex flex-col justify-between">
       <div>
@@ -16,7 +19,7 @@ export const HomePage: FC = () => {
         <div className="flex gap-2 mt-2">
           <AddDevicePopup
             renderOpener={(open) => (
-              <UiCard onClick={open} size="small" className="justify-center">
+              <UiCard onClick={open} size="small" className="justify-center cursor-pointer">
                 <div className="flex items-center text-white">
                   <PlusOutlined className="text-[24px]" />
                 </div>
@@ -36,7 +39,7 @@ export const HomePage: FC = () => {
             </div>
           </div>
         </UiCard>
-        <UiCard startIcon={<PasswordIcon/>} className="!p-2">
+        <UiCard onClick={() => navigate('/download')} startIcon={<PasswordIcon/>} className="!p-2 cursor-pointer">
           <div className="flex gap-4 items-center">
             <div className="flex flex-col gap-2">
               <div className="text-lg text-white">Инструкции</div>

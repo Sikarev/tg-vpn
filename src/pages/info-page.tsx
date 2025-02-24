@@ -1,7 +1,10 @@
 import { FC } from 'react';
 import { UiButton, UiCard } from '../shared/ui';
+import { useNavigate } from 'react-router-dom';
 
 export const InfoPage: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-between h-full">
       <div className="font-bold text-3xl my-20">Best VPN</div>
@@ -19,7 +22,7 @@ export const InfoPage: FC = () => {
           </UiCard>
         </div>
 
-        <UiButton className="w-full !mt-6 !py-4" color="primary">Попробовать бесплатно 3 дня</UiButton>
+        <UiButton onClick={() => navigate('/home')} className="w-full !mt-6 !py-4" color="primary">Попробовать бесплатно 3 дня</UiButton>
 
         <div className="my-2 text-xs flex justify-center">После 99 ₽/мес за устройство. <span className="text-[#5A60FF]">Полные условия</span></div>
       </div>

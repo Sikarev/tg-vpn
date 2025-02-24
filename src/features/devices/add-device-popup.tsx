@@ -1,8 +1,7 @@
 import { FC, Fragment, ReactNode, useState } from 'react';
 import { LeftOutlined } from '@ant-design/icons';
-import { UiButton } from '../../shared/ui';
+import { UiButton, UiPopup } from '../../shared/ui';
 import { Input } from 'antd-mobile';
-import { UiPopup } from '../../shared/ui/ui-popup.tsx';
 import { DocumentIcon } from '../../icons';
 
 export interface AddDevicePopupProps {
